@@ -4,7 +4,6 @@
         <record model="ir.ui.view" id="course_form_view">
             <field name="name">course.form</field>
             <field name="model">openacademy.course</field>
-            <field name="context" eval="{'search_default_my_courses': 1}"/>
             <field name="arch" type="xml">
                 <form string="Course Form">
                     <sheet>
@@ -52,7 +51,6 @@
         <record model="ir.ui.view" id="course_tree_view">
             <field name="name">course.tree</field>
             <field name="model">openacademy.course</field>
-            <field name="context" eval="{'search_default_my_courses': 1}"/>
             <field name="arch" type="xml">
                 <tree string="Course Tree">
                     <field name="name"/>
