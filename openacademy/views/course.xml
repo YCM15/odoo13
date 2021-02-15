@@ -4,6 +4,7 @@
         <record model="ir.ui.view" id="course_form_view">
             <field name="name">course.form</field>
             <field name="model">openacademy.course</field>
+            <field name="context" eval="{'search_default_my_courses': 1}"/>
             <field name="arch" type="xml">
                 <form string="Course Form">
                     <sheet>
@@ -39,6 +40,10 @@
                 <search>
                     <field name="name"/>
                     <field name="description"/>
+                    <filter name="my_courses" string="My Courses" domain="[('responsible_id', '=', uid)]"/>
+                    <group string="Group By">
+                        <filter name="by_responsible" string="Responsible" context="{'group_by': 'responsible_id'}"/>
+                    </group>
                 </search>
             </field>
         </record>
@@ -47,6 +52,7 @@
         <record model="ir.ui.view" id="course_tree_view">
             <field name="name">course.tree</field>
             <field name="model">openacademy.course</field>
+            <field name="context" eval="{'search_default_my_courses': 1}"/>
             <field name="arch" type="xml">
                 <tree string="Course Tree">
                     <field name="name"/>
